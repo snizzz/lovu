@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Pacifico"/>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400:700:900" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+    <script>function fileChooser() {
+        let file = "daysViews/day" + Difference_In_Days + ".html";
+        window.location = file;
+    }
+
+    document.documentElement.className = "js";
+    const supportsCssVars = function () {
+        let e, t = document.createElement("style");
+        return t.innerHTML = "root: { --tmp-var: bold; }", document.head.appendChild(t), e = !!(window.CSS && window.CSS.supports && window.CSS.supports("font-weight", "var(--tmp-var)")), t.parentNode.removeChild(t), e
+    };
+    supportsCssVars() || alert("Please view this in a modern browser that supports CSS Variables.");</script>
+    <script src="js/anime.min.js"></script>
+</head>
+<body>
+<div class="theme">
+    <label>365 powodów do miłości</label><br>
+    <div id="heartBeat" class="heart-beat">
+        <input name="main_heart" id="main_heart" type="checkbox"/>
+        <label id="heart_image" for="main_heart" onclick="fileChooser()">
+            <svg x="0px" y="0px"
+                 viewBox="0 0 100 100">
+                <g transform="translate(0,-952.36218)">
+                    <path style="color:#000000;enable-background:accumulate;"
+                          d="m 34.166665,972.36218 c -11.41955,0 -19.16666,8.91891 -19.16666,20.27029 0,19.45943 15,27.56753 35,39.72973 20.00001,-12.1622 34.99999,-20.2703 34.99999,-39.72973 0,-11.35137 -7.7471,-20.27029 -19.16665,-20.27029 -7.35014,0 -13.39148,4.05405 -15.83334,6.48647 -2.44185,-2.43241 -8.48319,-6.48647 -15.83334,-6.48647 z"
+                          fill="#f8332a" id="heart-path" stroke="#f8332a" stroke-width="5" marker="none"
+                          visibility="visible" display="inline" overflow="hidden"/>
+                </g>
+            </svg>
+        </label>
+
+    </div>
+
+    <label id="info"></label>
+    <label style="font-size: 0.9vw" id="info2">(Kliknij w serduszko)</label>
+</div>
+<br>
+
+
+</body>
+</html>
+
+<script>
+    // var textWrapper = document.querySelector('.ml16');
+    // textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+    //
+    // anime.timeline({loop: false})
+    //     .add({
+    //         targets: '.ml16 .letter',
+    //         translateY: [-100,0],
+    //         easing: "easeOutExpo",
+    //         duration: 1400,
+    //         delay: (el, i) => 30 * i
+    //     });
+    let date1 = new Date("10/21/2022");
+    let date2 = new Date();
+    const Difference_In_Time = date2.getTime() - date1.getTime();
+    const Difference_In_Days = Math.floor(Difference_In_Time / (1000 * 3600 * 24));
+
+
+    let text_to_set_info;
+    if (Difference_In_Days < 1) {
+        text_to_set_info = "Zaczekaj do 23 października"
+        document.getElementById("heart_image").setAttribute("onclick","None");
+        document.getElementById("info2").innerHTML = "";
+    }else{
+        text_to_set_info = "Dzień "+Difference_In_Days+"";
+    }
+    document.getElementById("info").innerHTML = text_to_set_info
+</script>
