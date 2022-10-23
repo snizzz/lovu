@@ -1,10 +1,110 @@
+<script>
+    let date1 = new Date("10/22/2022");
+    let date2 = new Date();
+    const Difference_In_Time = date2.getTime() - date1.getTime();
+    const Difference_In_Days = Math.floor(Difference_In_Time / (1000 * 3600 * 24));
+    if(Difference_In_Days !== 2){
+        window.location = "../index.html";
+    }
+</script>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
+    <title>day2</title>
+    <link rel="stylesheet" type="text/css" href="../css/day2.css"/>
+    <script src="../js/anime.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Pacifico"/>
 </head>
 <body>
+<div class="content-wrapper">
+
+    <h1 class="ml8">
+  <span class="letters-container">
+    <span class="letters letters-left">2</span>
+    <span class="letters bang"></span>
+  </span>
+        <span class="circle circle-white"></span>
+        <span class="circle circle-dark"></span>
+        <span class="circle circle-container"><span class="circle circle-dark-dashed"></span></span>
+    </h1><br><br><br><br><br>
+    <p class="pargraph">
+        Kocham Twój uśmiech, jestem w stanie wymienić co najmniej kilkanaście jego rodzajów: szczęśliwy, szczery, ten nieszczery, ten uroczy,
+        ten kiedy czasami widzisz mnie, ten drugi kiedy czasami mnie widzisz, ten kiedy budzimy się obok siebie&#9200;, ten kiedy opowiadasz żart, ten złośliwy, ten kiedy coś cię rozbawiło, ten kiedy umierasz ze śmiechu&#128514; ten kiedy widzisz coś "uroczego",
+        ten kiedy jesteś lekko pijana&#129346;, ten kiedy jesteś wesoła, ten kiedy dopiełaś swego, ten kiedy jesteś podekscytowan, ten uwodzicielski &#128525;, ten kiedy mnie łaskoczesz, ten kiedy zrobię coś głupiego,
+        ten kiedy czujesz się dumna, ten zadziorny&#128293;, ten kiedy mnie przytulasz, ten serdeczne, ten kochający&#128158;... .Każdy z nich jestem w stanie sobie wyobrazić, każdy jest wyjątkowy i też powoduje u mnie uśmiech. W ogóle to sprawiasz, że jestem weselszy.
+        Swoim uśmiechem i słowem, potrafisz pozbyć się ponurego nastroju i pocieszyć. Jesteś bardzo życzliwą, radosną oraz miłą osobą i przez Twoją błyskotliwość też dowcipną.
+        Chciałbym cię móc uszczęśliwiać tak jak ty mnie.
+    </p>
+</div>
+<a id="giggle" class="giggle" href="">Połaskocz mnie!</a>
 
 </body>
 </html>
+<script>
+    const button = document.getElementById("giggle");
+
+    const animateMove = (element, prop, pixels) =>
+        anime({
+            targets: element,
+            [prop]: `${pixels}px`,
+            easing: "easeOutCirc"
+        });
+
+    ["mouseover", "click"].forEach(function (el) {
+        button.addEventListener(el, function (event) {
+            const top = getRandomNumber(window.innerHeight - this.offsetHeight);
+            const left = getRandomNumber(window.innerWidth - this.offsetWidth);
+
+            animateMove(this, "left", left).play();
+            animateMove(this, "top", top).play();
+        });
+    });
+
+    const getRandomNumber = (num) => {
+        return Math.floor(Math.random() * (num + 1));
+    };
+
+
+    anime.timeline({loop: false})
+        .add({
+            targets: '.ml8 .circle-white',
+            scale: [0, 3],
+            opacity: [1, 0],
+            easing: "easeInOutExpo",
+            rotateZ: 360,
+            duration: 1100
+        }).add({
+        targets: '.ml8 .circle-container',
+        scale: [0, 1],
+        duration: 1100,
+        easing: "easeInOutExpo",
+        offset: '-=1000'
+    }).add({
+        targets: '.ml8 .circle-dark',
+        scale: [0, 1],
+        duration: 1100,
+        easing: "easeOutExpo",
+        offset: '-=600'
+    }).add({
+        targets: '.ml8 .letters-left',
+        scale: [0, 1],
+        duration: 1200,
+        offset: '-=550'
+    }).add({
+        targets: '.ml8 .bang',
+        scale: [0, 1],
+        rotateZ: [45, 15],
+        duration: 1200,
+        offset: '-=1000'
+    });
+
+    anime({
+        targets: '.ml8 .circle-dark-dashed',
+        rotateZ: 360,
+        duration: 8000,
+        easing: "linear",
+        loop: true
+    });
+
+</script>

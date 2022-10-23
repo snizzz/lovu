@@ -1,49 +1,3 @@
-/*.ml16 {*/
-/*    font-family: Coc;*/
-/*    color: #ffffff;*/
-/*    !*padding: 40px 0;*!*/
-/*    !*font-weight: 800;*!*/
-/*    font-size: 3vw;*/
-/*    overflow: hidden;*/
-/*}*/
-
-/*!*.ml16 .letter {*!*/
-/*!*    display: inline-block;*!*/
-/*!*    line-height: 1vw;*!*/
-/*!*}*!*/
-
-/*body{*/
-/*    background: linear-gradient(to right, #f577b4 0%, #fdf080 100%);*/
-/*    !*overflow: hidden;*!*/
-/*    !*align-items: center;*!*/
-/*    !*text-align: center;*!*/
-/*    !*align-content: center;*!*/
-/*    !*justify-content: center;*!*/
-/*    display: grid;*/
-/*    place-items: center;*/
-/*}*/
-
-/*label {*/
-/*    font-family: Pacifico;*/
-/*    text-align: center;*/
-/*    font-size: 2em;*/
-/*    margin: 0;*/
-/*    -webkit-background-clip: text;*/
-/*    -webkit-text-fill-color: transparent;*/
-/*    -webkit-mask-image: -webkit-gradient(linear,left top,left bottom,color-stop(0,#000),color-stop(.5,#000),color-stop(1,transparent));*/
-/*    transition: background-position 1s, background-color 1s;*/
-/*    text-align: center;*/
-/*    font-size: calc(28vw + 1rem);*/
-/*    font-weight: 400;*/
-/*    line-height: 1;*/
-/*    background-image: url('//hearts.png');*/
-/*    background-size: 30vw auto, 30vw auto, 20vw auto;*/
-/*    background-repeat: repeat-x;*/
-/*    background-position: 0px 15%, 200px 25%, -50px 2vw;*/
-/*    background-color: #ff7f59;*/
-/*    background-position: -120px 15%, 230px 20%, -100px 3vw;*/
-/*}*/
-
 * {
     box-sizing: border-box;
 }
@@ -52,6 +6,7 @@ html,
 body {
     margin: 0 auto;
     height: 100%;
+    overflow: hidden;
 }
 
 body {
@@ -131,16 +86,11 @@ div.theme:after {
     width: 60px;
 }
 
-.heart-beat input[type=checkbox] + label svg {
+.heart-beat label svg {
     -webkit-animation: heart-beat-wiggle 700ms 100ms forwards ease-in-out;
     animation: heart-beat-wiggle 700ms 100ms forwards ease-in-out infinite;
 }
 
-.heart-beat input[type=checkbox] {
-    left: -999999px;
-    position: absolute;
-    top: -999999px;
-}
 
 @keyframes heart-beat-wiggle {
     0% {
@@ -158,19 +108,4 @@ div.theme:after {
     100% {
         transform: rotate(0deg) scale(1);
     }
-}
-
-/*arrow*/
-.arrow {
-    background: #fff;
-    height: 3px;
-    margin: 0 auto;
-    cursor: pointer;
-    content: "";
-    position: absolute;
-    width: 15px;
-    right: -3px;
-    bottom: -4px;
-    /*transform: rotate(-45deg);*/
-
 }

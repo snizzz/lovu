@@ -1,17 +1,26 @@
+<script>
+    let date1 = new Date("10/22/2022");
+    let date2 = new Date();
+    const Difference_In_Time = date2.getTime() - date1.getTime();
+    const Difference_In_Days = Math.floor(Difference_In_Time / (1000 * 3600 * 24));
+    if(Difference_In_Days !== 1){
+        window.location = "../index.html";
+    }
+</script>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
     <title>day1</title>
     <link rel="stylesheet" type="text/css" href="../css/day1.css"/>
 </head>
 <body>
-<div class="message">
+<div id="message" class="message">
     <h1>1.</h1>
     <p class="pargraph">
         Miałem ogromne szczęście, że ze mną zatańczyłaś. Ten moment zmienił zupełnie moje życie. Poznałem
-        najcudowniejszą dziewczyną na świecie i zakochałem się w niej do szaleństwa. Nigdy nie wiedziałem że mogę tak
-        bardzo czuć miłość jak z Tobą. Od tego momentu chce z tobą spędzić resztę życia, bo kochanie byłem stworzony
+        najcudowniejszą dziewczyną na świecie i zakochałem się w niej do szaleństwa. Czasami wydaję mi się to wszystko jak sen.
+        Nie wiem jakim cudem doszło do naszego spotkania, ale od tego momentu chce z tobą spędzić resztę życia, bo kochanie jestem stworzony,
         żeby Cię kochać.
     </p>
 
